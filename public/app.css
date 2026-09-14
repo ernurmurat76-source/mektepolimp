@@ -66,6 +66,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 
 .table th,.table td{text-align:left;padding:12px;border-bottom:1px solid #edf0f5;font-size:13px}
 .table th{background:#f7f9fc;color:#526077}
 .danger{border:0;background:#ffe9e9;color:#b02121;border-radius:8px;padding:7px 9px;cursor:pointer}
+.rankingFilters{display:grid;grid-template-columns:180px minmax(240px,1fr) auto;gap:12px;align-items:end;margin-bottom:16px}.rankingFilters label{margin:0}.rankingFilters button{height:46px}
 .modal{position:fixed;inset:0;background:#071a3377;display:grid;place-items:center;padding:20px;z-index:20}
 .modalBox{background:#fff;border-radius:18px;padding:25px;width:min(650px,100%);max-height:90vh;overflow:auto;position:relative}
 .x{position:absolute;right:15px;top:12px;border:0;background:transparent;font-size:27px;cursor:pointer}
@@ -116,6 +117,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 
   .tabs{overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
   .tabs button{white-space:nowrap;min-height:44px}
   .table{-webkit-overflow-scrolling:touch}
+  .rankingFilters{grid-template-columns:1fr}.rankingFilters button{width:100%}
   .modal{padding:10px;align-items:end}
   .modalBox{width:100%;max-height:92dvh;padding:22px 16px 20px;border-radius:18px 18px 0 0}
   .modalBox h2{padding-right:32px}
