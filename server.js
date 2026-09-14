@@ -63,6 +63,11 @@ async function api(req,res,url){
   if(req.method==='POST'&&url.pathname==='/api/admin/login'){const b=await body(req),adminPassword=process.env.ADMIN_PASSWORD||'Mektep2026!';if(b.login!=='admin'||b.password!==adminPassword)return out(res,401,{error:'Логин немесе құпиясөз қате'});return out(res,200,{token:issueSession('admin',1)})}
   if(url.pathname.startsWith('/api/admin/')&&!admin(req))return out(res,401,{error:'Әкімші ретінде кіріңіз'});
   if(req.method==='GET'&&url.pathname==='/api/admin/dashboard')return out(res,200,{settings:d.settings,students:d.students,questions:d.questions,attempts:d.attempts});
+  if(req.method==='DELETE'&&url.pathname==='/api/admin/participants'){
+    const removedStudents=d.students.length,removedAttempts=d.attempts.length;
+    d.students=[];d.attempts=[];save(d);
+    return out(res,200,{ok:true,removedStudents,removedAttempts});
+  }
   if(req.method==='POST'&&url.pathname==='/api/admin/questions'){const b=await body(req);if(!b.text||!Array.isArray(b.options)||b.options.length<2)return out(res,400,{error:'Сұрақ толық емес'});d.questions.push({id:crypto.randomUUID(),grade:Number(b.grade),subject:b.subject,text:b.text,options:b.options,correct:Number(b.correct),points:Number(b.points)||1});save(d);return out(res,200,{ok:true})}
   if(req.method==='POST'&&url.pathname==='/api/admin/questions/import'){
     const b=await body(req),name=String(b.name||'').toLowerCase(),buf=Buffer.from(String(b.data||''),'base64');
