@@ -54,6 +54,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 
 .center{text-align:center}
 .trophy{font-size:62px}
 .score{font-size:44px;color:var(--blue);font-weight:900}
+.reviewBox{width:min(850px,calc(100% - 32px))}.reviewTitle{margin:28px 0 12px;color:var(--navy)}.answerReview{display:grid;gap:12px}.reviewItem{position:relative;text-align:left;border:1px solid #dfe6ef;border-left:5px solid #aab5c4;border-radius:12px;padding:14px 105px 14px 16px;background:#fff}.reviewItem.correct{border-left-color:#159455;background:#f3fbf6}.reviewItem.wrong{border-left-color:#d33b3b;background:#fff6f6}.reviewItem h4{margin:0 0 9px;line-height:1.4}.reviewItem p{margin:5px 0;line-height:1.4}.reviewItem>span{position:absolute;right:14px;top:14px;font-weight:800}.reviewItem.correct>span,.correctAnswer{color:#08753d}.reviewItem.wrong>span{color:#bd2525}
 .dashHead .primary{background:var(--blue);color:#fff}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
 .stat{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
@@ -123,6 +124,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 
   .modalBox h2{padding-right:32px}
   .x{width:44px;height:44px;right:7px;top:5px}
   .toast{left:12px;right:12px;bottom:12px;text-align:center;line-height:1.4}
+  .reviewBox{width:calc(100% - 24px)}.reviewItem{padding:14px}.reviewItem>span{position:static;display:block;margin-top:9px}
 }
 
 @media(max-width:420px){
